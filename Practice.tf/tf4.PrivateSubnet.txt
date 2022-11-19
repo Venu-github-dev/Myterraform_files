@@ -1,0 +1,14 @@
+provider "aws" {
+  region = var.region
+}
+
+resource "aws_subnet" "Private-Subnet" {
+    count = length(var.Private-cidr)
+    vpc_id = aws_vpc.test.id
+    cidr_block = element(var.Private-cidr, count.index)
+    availability_zone = element(data.aws_availability_zones.available.names, count.index)
+    tags = {
+      Name = "${var.Private-subnets}-${count.index + 1}"
+      env = var.envs[0]
+    }
+}

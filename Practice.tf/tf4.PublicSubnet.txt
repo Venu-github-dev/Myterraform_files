@@ -1,0 +1,40 @@
+
+# resource "aws_subnet" "Subnets" {
+#   count = 2
+#   vpc_id = aws_vpc.test.id
+#   cidr_block = element(var.Subent-cidr, count.index)
+#   availability_zone =element(var.azs, count.index)
+#   tags = {
+#     Name = element(var.Public-subnets, count.index)
+#     env = "dev"
+#   }
+#
+# }
+
+
+
+# resource "aws_subnet" "Subnets" {
+#   count = length(var.Subnet-cidr)
+#   vpc_id = aws_vpc.test.id
+#   cidr_block = element(var.Subnet-cidr, count.index)
+#   availability_zone = element(data.aws_availability_zones.available.names, count.index)
+#   tags = {
+#     Name = element(var.Public-subnets, count.index)
+#     env = var.envs[0]
+#   }
+#
+# }
+
+
+resource "aws_subnet" "Subents" {
+  count = length(var.Subnet-cidr)
+  vpc_id = aws_vpc.test.id
+  cidr_block = element(var.Subnet-cidr, count.index)
+  availability_zone = element(data.aws_availability_zones.available.names, count.index)
+  tags = {
+    Name = "${var.Public-subnets}-${count.index + 1}"
+    env = var.envs[0]
+  }
+
+
+}
