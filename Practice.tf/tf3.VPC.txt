@@ -1,0 +1,26 @@
+# resource "aws_vpc" "test1" {
+#     cidr_block = var.vpc-cidr
+#     instance_tenancy = var.instance-tenancy
+#     tags = {
+#       Name = var.VPC-name
+#       env = "dev"
+#     }
+# }
+# 
+# resource "aws_subnet" "Subnet1" {
+#     vpc_id = aws_vpc.test1.id
+#     cidr_block = var.subnet-cidr
+#     tags =  {
+#       Name = var.Public-subnet
+#       env = "dev"
+#     }
+# }
+# 
+# resource "aws_subnet" "Subnet2" {
+#     vpc_id = aws_vpc.test1.id
+#     cidr_block = var.subnet2-cidr
+#     tags = {
+#       Name = var.private-subnet
+#       env = "dev"
+#     }
+# }

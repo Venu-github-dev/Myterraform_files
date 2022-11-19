@@ -1,0 +1,31 @@
+# variable "region" {
+#   default = "us-east-1"
+# }
+#
+# variable "VPC-name" {
+#   default = "CITY"
+# }
+#
+# variable "vpc-cidr" {
+#   default = "10.10.0.0/16"
+# }
+#
+# variable "instance-tenancy" {
+#   default = "default"
+# }
+#
+# variable "Public-subnet" {
+#   default = "test-Subnet1"
+# }
+#
+# variable "subnet-cidr" {
+#   default = "10.10.0.0/25"
+# }
+#
+# variable "private-subnet" {
+#   default = "test-Subent2"
+# }
+#
+# variable "subnet2-cidr" {
+#   default = "10.10.0.128/25"
+# }
