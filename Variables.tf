@@ -1,1 +1,147 @@
+# variable "region" {
+#   default = "us-east-1"
+# }
+#
+# variable "VPC-name" {
+#   default = "Public"
+# }
+#
+# variable "vpc-cidr" {
+#   default = "10.10.0.0/16"
+# }
+#
+# variable "instance-tenancy" {
+#   default = "default"
+# }
+#
+# variable "Public-subnets" {
+#   type = list
+#   default = ["Public-Subnet1", "Public-subnet2"]
+# }
+#
+# variable "azs" {
+#   type = list
+#   default = ["us-east-1a", "us-east-1b"]
+# }
+#
+# variable "subnet-cidr" {
+#   type = list
+#   default = ["10.10.0.0/25", "10.10.0.128/25"]
+# }
 
+
+
+
+
+
+
+
+
+
+# variable "region" {
+#   default = "us-east-1"
+# }
+#
+# variable "vpc-name" {
+#   default = "test"
+# }
+#
+# variable "vpc-cidr" {
+#   default = "10.10.0.0/16"
+# }
+#
+# variable "instance-tenancy" {
+#   default = "default"
+# }
+# variable "Public-subnets" {
+#   type = list
+#   default = ["Public-subent1", "Public-subent2"]
+# }
+#
+# variable "Subent-cidr" {
+#   type = list
+#   default = ["10.10.0.0/25", "10.10.0.128/25"]
+# }
+#
+# variable "azs" {
+#   type = list
+#   default = ["us-east-1a", "us-east-1b"]
+# }
+
+
+
+
+variable "region" {
+  default = "us-east-1"
+}
+
+variable "vpc-name" {
+  default = "test"
+}
+
+variable "vpc-cidr" {
+  default = "10.10.0.0/16"
+}
+
+variable "instance-tenancy" {
+  default = "default"
+}
+variable "Public-subnets" {
+  default = "PublicSubnet"
+}
+
+variable "Private-subnets" {
+  default = "PrivateSubnet"
+}
+
+variable "Subnet-cidr" {
+  type = list
+  default = ["10.10.0.0/25", "10.10.0.128/25", "10.10.1.0/25", "10.10.1.128/25"]
+}
+
+variable "Private-cidr" {
+  default = ["10.10.2.0/25", "10.10.2.128/25", "10.10.3.0/25", "10.10.3.128/25"]
+}
+
+# variable "azs" {
+#   type = lists
+#   default = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d"]
+# }
+ data "aws_availability_zones" "available" {}
+
+ variable "envs" {
+   type = list
+   default = ["dev", "prod"]
+ }
+
+variable "igw" {
+  default = "test-igw"
+}
+
+variable "Publicroute-table" {
+  default = "Public-route"
+}
+
+variable "Privateroute-table" {
+  default = "Private-route"
+}
+
+variable "ami-id" {
+  default = "ami-0b0dcb5067f052a63"
+}
+
+variable "instance-type" {
+  default = "t2.micro"
+}
+
+variable "key-name" {
+  default = "Nenuvenu"
+}
+
+variable "Public-server" {
+  default = "Public_Server"
+}
+
+variable "Private_server" {
+  default = "Private_server"
+}
