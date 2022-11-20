@@ -1,0 +1,11 @@
+output "azs" {
+  value = data.aws_availability_zones.available.names
+}
+
+output "Public-ip" {
+  value = aws_instance.Public-ec2.public_ip
+}
+
+output "Private-ip" {
+  value = aws_instance.Private_ec2.private_ip
+}

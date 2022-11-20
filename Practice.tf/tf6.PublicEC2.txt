@@ -1,0 +1,15 @@
+resource "aws_instance" "Public-ec2" {
+    ami = var.ami-id
+    instance_type = var.instance-type
+    key_name = var.key-name
+    subnet_id = aws_subnet.Subents.*.id[0]
+    vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+    associate_public_ip_address = true
+
+
+    tags = {
+      Name = var.Public-server
+      env = var.envs[0]
+    }
+
+}

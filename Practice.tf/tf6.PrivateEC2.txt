@@ -1,0 +1,12 @@
+resource "aws_instance" "Private_ec2" {
+    ami = var.ami-id
+    instance_type = var.instance-type
+    key_name = var.key-name
+    subnet_id = aws_subnet.Private-Subnet.*.id[0]
+    vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+
+    tags = {
+      Name = var.Private_server
+      envs = var.envs[0]
+    }
+}

@@ -1,0 +1,18 @@
+resource "aws_instance" "test_ec2" {
+    ami = "ami-0b0dcb5067f052a63"
+    instance_type = "t2.micro"
+    key_name = var.key-name
+    subnet_id = "subnet-076dbeb03bb2dcacf"
+    vpc_security_group_ids = ["sg-0150fa35da2949d5d"]
+    associate_public_ip_address = true
+
+
+    tags = {
+      Name = "test"
+      env = var.envs[0]
+    }
+
+}
+
+
+command: terraform import aws_instance.test_ec2 Instanceid(i-12345)
