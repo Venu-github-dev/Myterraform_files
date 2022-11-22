@@ -1,0 +1,4 @@
+variable "policy-list-arn" {
+  type = list
+  default = ["arn:aws:iam::aws:policy/AdministratorAccess", "arn:aws:iam::065980063238:policy/ec2_start_stop"]
+}

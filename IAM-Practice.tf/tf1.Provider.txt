@@ -1,0 +1,12 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+
+terraform {
+  backend "s3" {
+    bucket = "terraform-tfstate-065980063238"
+    key    = "terraform-IAM.tfstate"
+    region = "us-east-1"
+  }
+}

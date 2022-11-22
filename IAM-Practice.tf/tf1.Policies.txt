@@ -1,0 +1,21 @@
+data "aws_iam_policy_document" "example" {
+  statement {
+    sid = "1"
+
+    actions = [
+      "s3:GetObject",
+      "s3:ListBucket",
+    ]
+
+    resources = [
+      "arn:aws:s3:::terraform-tfstate-065980063238",
+    ]
+  }
+}
+
+
+resource "aws_iam_policy" "S3_policy" {
+  name   = "s3_policy"
+  path   = "/"
+  policy = data.aws_iam_policy_document.example.json
+}
