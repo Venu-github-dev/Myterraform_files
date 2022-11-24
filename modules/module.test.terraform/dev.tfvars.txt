@@ -1,0 +1,12 @@
+vpc_cidr = "10.10.0.0/16"
+vpc_tenancy = "default"
+subnet_cidrs = ["10.10.0.0/25", "10.10.0.128/25"]
+account = "065980063238"
+project_name = "western.terraform"
+env = "dev"
+azs = ["us-east-1a", "us-east-1b"]
+
+ami                       = "ami-0b0dcb5067f052a63"
+instance_type             = "t2.micro"
+key_name = "abcd"
+public_ip_address = true

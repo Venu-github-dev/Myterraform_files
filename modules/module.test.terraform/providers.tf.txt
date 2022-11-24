@@ -1,0 +1,12 @@
+provider "aws" {
+  region = var.region
+
+}
+terraform {
+  backend "s3" {
+    bucket = "western-union-terraform-065980063238-us-east-1"
+    key    = "terraform-statefile"
+    region = "us-east-1"
+    dynamodb_table = "test-terraform"
+  }
+}
